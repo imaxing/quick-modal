@@ -36,6 +36,7 @@ export default {
       }, 400)
     },
     async onButtonClicked(button) {
+      if (!button.callback) return
       if (typeof button.callback === 'string') {
         if (!this.$refs.vNodeComponent) return
         this.$refs.vNodeComponent[button.callback](button.params)
